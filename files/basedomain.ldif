@@ -1,0 +1,12 @@
+#replace to your own domain name for "dc=***,dc=***" section
+dn: dc=server,dc=world
+objectClass: top
+objectClass: dcObject
+objectclass: organization
+o: Server World
+dc: Server
+
+dn: cn=Manager,dc=server,dc=world
+objectClass: organizationalRole
+cn: Manager
+description: Directory Manager
