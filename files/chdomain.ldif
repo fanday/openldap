@@ -24,7 +24,6 @@ olcRootPW: admin
 dn: olcDatabase={2}bdb,cn=config
 changetype: modify
 add: olcAccess
-olcAccess: {0}to attrs=userPassword,shadowLastChange by
-  dn="cn=Manager,dc=server,dc=world" write by anonymous auth by self write by * none
+olcAccess: {0}to attrs=userPassword,shadowLastChange by self write by anonymous auth by dn="cn=Manager,dc=server,dc=world" write by * none
 olcAccess: {1}to dn.base="" by * read
-olcAccess: {2}to * by dn="cn=Manager,dc=server,dc=world" write by * read
+olcAccess: {2}to * by self write by dn="cn=Manager,dc=server,dc=world" write by * read
