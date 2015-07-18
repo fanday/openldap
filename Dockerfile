@@ -17,6 +17,8 @@ RUN rm epel-release-6-8.noarch.rpm
 RUN cp /files/supervisord.conf /etc/supervisord.conf
 RUN rm -fr /files
 
+RUN ln -s /var/lib/ldap /home/ldap
+
 RUN yum --enablerepo=epel -y install phpldapadmin
 
 # line 397: uncomment, line 398: comment out
