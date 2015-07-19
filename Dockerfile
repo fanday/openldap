@@ -7,7 +7,7 @@ MAINTAINER Fanday Dai "fandaydai@live.cn"
 RUN yum -y update
 RUN yum -y install wget openldap-servers openldap-clients python-setuptools
 RUN cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
-RUN chown ldap. /var/lib/ldap/DB_CONFIG
+RUN chown -R ldap:ldap /var/lib/ldap
 ADD files /files
 RUN chmod 0755 /files/configure.sh
 RUN /bin/bash -l -c '/files/configure.sh'
