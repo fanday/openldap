@@ -17,7 +17,6 @@ RUN rm epel-release-6-8.noarch.rpm
 RUN cp /files/supervisord.conf /etc/supervisord.conf
 RUN rm -fr /files
 
-RUN ln -s /var/lib/ldap /home/ldap
 
 RUN yum --enablerepo=epel -y install phpldapadmin
 
@@ -34,7 +33,6 @@ RUN pip install supervisor
 
 RUN sed -i.bak '1c #meld3 >= 0.6.5' /usr/lib/python2.6/site-packages/supervisor-3.1.3-py2.6.egg-info/requires.txt 
 
-VOLUME /home/ldap
 
 EXPOSE 389
 EXPOSE 80
